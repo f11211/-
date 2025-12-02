@@ -33,9 +33,8 @@ jobs:
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST_IP }}
-          username: ubuntu
+          username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
           script: |
             docker stop my-app || true
             docker rm my-app || true
